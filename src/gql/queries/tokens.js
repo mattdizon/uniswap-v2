@@ -11,3 +11,17 @@ query getTokens{
 		}
 	}	
 `;
+
+export const TOKEN_DAILY = gql`
+	query{
+		tokenDayDatas(orderBy: date, orderDirection: asc,
+			where: {
+				token
+			}){
+			id
+			date
+			priceUSD
+			dailyVolumeUSD
+		}
+	}
+`
