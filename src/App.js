@@ -41,17 +41,18 @@ export const App = () => {
 		<div>
 			{
 				!loading 
-					? <Box sx={{display: 'flex', flexDirection: 'column'}}>
+					? <Box sx={{display: 'flex', flexDirection: 'column', color: 'white'}}>
 							<h1>Top 5 Tokens by Trade Volume in USD</h1>
 							{renderList()}
 						{	
 							selectedToken
 							? <>
 								<h2>Show Chart For {selectedToken.name}</h2>
+								<h2>Total Liquidity: {selectedToken.totalLiquidity}</h2>
 								<Tabs value={tabValue} onChange={handleChange} aria-label="basic tabs example">
-									<Tab label="Hourly" {...a11yProps(0)} />
-									<Tab label="Daily" {...a11yProps(1)} />
-									<Tab label="Monthly" {...a11yProps(2)} />
+									<Tab label="Hourly" {...a11yProps(0)} sx={{color: 'white'}}/>
+									<Tab label="Daily" {...a11yProps(1)} sx={{color: 'white'}}/>
+									<Tab label="Monthly" {...a11yProps(2)} sx={{color: 'white'}}/>
 								</Tabs>
 							</>
 							: <h2>Select a Token to see the Total Liquidity in USD</h2>
